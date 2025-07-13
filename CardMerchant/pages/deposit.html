@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CardMerchant – Deposit Crypto</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar (Same as Homepage) -->
+    <nav>
+        <div class="logo">
+            <h1><i class="fas fa-credit-card"></i> CardMerchant</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Cards</a></li>
+            <li><a href="kyc.html">Get Verified</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="contact.html">Support</a></li>
+            <li><a href="#" class="btn-login">Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- Deposit Header -->
+    <section class="deposit-header">
+        <h1>Deposit Cryptocurrency</h1>
+        <p>Send crypto to the address below to load your CardMerchant balance.</p>
+    </section>
+
+    <!-- Deposit Steps -->
+    <section class="deposit-steps">
+        <div class="step">
+            <span class="step-number">1</span>
+            <p>Select your cryptocurrency</p>
+        </div>
+        <div class="step">
+            <span class="step-number">2</span>
+            <p>Send to the provided address</p>
+        </div>
+        <div class="step">
+            <span class="step-number">3</span>
+            <p>Wait for blockchain confirmation</p>
+        </div>
+    </section>
+
+    <!-- Crypto Selection Tabs -->
+    <section class="crypto-tabs">
+        <div class="tab-buttons">
+            <button class="tab-btn active" onclick="openCrypto('btc')">Bitcoin (BTC)</button>
+            <button class="tab-btn" onclick="openCrypto('eth')">Ethereum (ETH)</button>
+            <button class="tab-btn" onclick="openCrypto('usdt')">USDT (ERC-20)</button>
+        </div>
+
+        <!-- BTC Deposit Box (Default) -->
+        <div id="btc" class="crypto-box active">
+            <div class="wallet-info">
+                <h3>Send Bitcoin (BTC) to:</h3>
+                <div class="wallet-address">
+                    <input type="text" id="btc-address" value="3FZbgi29cpjq2GjdwV8eyHuJJnkLtktZc5" readonly>
+                    <button onclick="copyAddress('btc-address')"><i class="fas fa-copy"></i> Copy</button>
+                </div>
+                <div class="qr-code">
+                    <img src="assets/btc-qr.png" alt="BTC Deposit QR">
+                </div>
+                <p class="warning"><i class="fas fa-exclamation-circle"></i> Send only <strong>BTC</strong> to this address.</p>
+            </div>
+            <div class="deposit-limits">
+                <h4>Deposit Limits:</h4>
+                <ul>
+                    <li>Minimum: 0.001 BTC</li>
+                    <li>Maximum: 2 BTC per transaction</li>
+                    <li>Network fee: 0.0005 BTC</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ETH Deposit Box (Hidden by Default) -->
+        <div id="eth" class="crypto-box">
+            <div class="wallet-info">
+                <h3>Send Ethereum (ETH) to:</h3>
+                <div class="wallet-address">
+                    <input type="text" id="eth-address" value="0x71C7656EC7ab88b098defB751B7401B5f6d8976F" readonly>
+                    <button onclick="copyAddress('eth-address')"><i class="fas fa-copy"></i> Copy</button>
+                </div>
+                <div class="qr-code">
+                    <img src="assets/eth-qr.png" alt="ETH Deposit QR">
+                </div>
+                <p class="warning"><i class="fas fa-exclamation-circle"></i> Send only <strong>ETH</strong> to this address.</p>
+            </div>
+            <div class="deposit-limits">
+                <h4>Deposit Limits:</h4>
+                <ul>
+                    <li>Minimum: 0.01 ETH</li>
+                    <li>Maximum: 20 ETH per transaction</li>
+                    <li>Network fee: ~0.001 ETH</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- USDT Deposit Box (Hidden by Default) -->
+        <div id="usdt" class="crypto-box">
+            <div class="wallet-info">
+                <h3>Send USDT (ERC-20) to:</h3>
+                <div class="wallet-address">
+                    <input type="text" id="usdt-address" value="0x71C7656EC7ab88b098defB751B7401B5f6d8976F" readonly>
+                    <button onclick="copyAddress('usdt-address')"><i class="fas fa-copy"></i> Copy</button>
+                </div>
+                <div class="qr-code">
+                    <img src="assets/usdt-qr.png" alt="USDT Deposit QR">
+                </div>
+                <p class="warning"><i class="fas fa-exclamation-circle"></i> <strong>Only ERC-20 USDT</strong> supported.</p>
+            </div>
+            <div class="deposit-limits">
+                <h4>Deposit Limits:</h4>
+                <ul>
+                    <li>Minimum: 10 USDT</li>
+                    <li>Maximum: 10,000 USDT per transaction</li>
+                    <li>Network fee: ~5 USDT</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transaction Status Tracker -->
+    <section class="transaction-tracker">
+        <h2>Track Your Deposit</h2>
+        <div class="tracker-steps">
+            <div class="tracker-step active">
+                <i class="fas fa-wallet"></i>
+                <p>Awaiting Payment</p>
+            </div>
+            <div class="tracker-step">
+                <i class="fas fa-clock"></i>
+                <p>Confirming (0/3)</p>
+            </div>
+            <div class="tracker-step">
+                <i class="fas fa-check-circle"></i>
+                <p>Funds Added</p>
+            </div>
+        </div>
+        <div class="transaction-details">
+            <p><strong>Estimated Time:</strong> 5-30 minutes (varies by network)</p>
+            <p><strong>Need help?</strong> <a href="contact.html">Contact Support</a></p>
+        </div>
+    </section>
+    <!-- Existing Transaction Tracker -->
+<section class="transaction-tracker">
+    <h2>Track Your Deposit</h2>
+    <div class="tracker-steps">
+        <!-- ... (existing code) ... -->
+    </div>
+</section>
+
+<!-- NEW: Add this Real-Time Transaction Section HERE -->
+<section class="live-transaction">
+    <h2>Live Transaction Status</h2>
+    <div class="tx-status">
+        <div class="tx-info">
+            <p><strong>TX Hash:</strong> <span id="tx-hash">Not detected yet</span></p>
+            <p><strong>Amount:</strong> <span id="tx-amount">-</span></p>
+            <p><strong>Confirmations:</strong> <span id="tx-confirmations">0</span>/3</p>
+        </div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="tx-progress"></div>
+        </div>
+        <button id="check-status" class="btn-primary">Check Now</button>
+        <p class="tx-note">Transactions typically take 5-30 minutes.</p>
+    </div>
+</section>
+
+<!-- Existing Footer -->
+<footer>
+    <!-- ... (existing footer code) ... -->
+</footer>
+
+    <!-- Footer (Same as Homepage) -->
+    <footer>
+        <div class="footer-links">
+            <a href="terms.html">Terms</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="aml-kyc.html">Compliance</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <p>&copy; 2024 CardMerchant. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

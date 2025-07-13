@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CardMerchant – Dashboard</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar (Logged In) -->
+    <nav>
+        <div class="logo">
+            <h1><i class="fas fa-credit-card"></i> CardMerchant</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Cards</a></li>
+            <li><a href="deposit.html">Deposit</a></li>
+            <li><a href="dashboard.html" class="active">Dashboard</a></li>
+            <li><a href="#" id="logout-btn">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Dashboard Header -->
+    <section class="dashboard-header">
+        <div class="user-greeting">
+            <h1>Welcome back, <span id="username">User</span>!</h1>
+            <p>Last login: <span id="last-login">Today, 10:42 AM</span></p>
+        </div>
+        <div class="quick-actions">
+            <a href="deposit.html" class="btn-primary"><i class="fas fa-plus"></i> Top Up</a>
+            <a href="products.html" class="btn-outline"><i class="fas fa-credit-card"></i> Get New Card</a>
+        </div>
+    </section>
+
+    <!-- Balance Overview -->
+    <section class="balance-overview">
+        <h2>Your Balance</h2>
+        <div class="balance-cards">
+            <div class="balance-card">
+                <div class="balance-type">
+                    <img src="assets/visa-logo.png" alt="Visa">
+                    <h3>Visa Card</h3>
+                </div>
+                <div class="balance-amount">
+                    <p>Available</p>
+                    <h4>$1,245.50</h4>
+                </div>
+                <div class="balance-actions">
+                    <button class="btn-icon" title="Freeze Card" onclick="toggleFreeze(0)">
+                        <i class="fas fa-snowflake"></i>
+                    </button>
+                    <button class="btn-icon" title="View Details">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="balance-card">
+                <div class="balance-type">
+                    <img src="assets/mastercard-logo.png" alt="Mastercard">
+                    <h3>Mastercard</h3>
+                </div>
+                <div class="balance-amount">
+                    <p>Available</p>
+                    <h4>$750.00</h4>
+                </div>
+                <div class="balance-actions">
+                    <button class="btn-icon" title="Freeze Card" onclick="toggleFreeze(1)">
+                        <i class="fas fa-snowflake"></i>
+                    </button>
+                    <button class="btn-icon" title="View Details">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="total-balance">
+                <p>Total Balance</p>
+                <h3>$1,995.50</h3>
+                <a href="deposit.html" class="btn-primary">Add Funds</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Transactions -->
+    <section class="recent-transactions">
+        <div class="section-header">
+            <h2>Recent Transactions</h2>
+            <a href="#" class="btn-text">View All</a>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>May 15, 2024</td>
+                    <td>Amazon Purchase</td>
+                    <td>-$89.99</td>
+                    <td><span class="status completed">Completed</span></td>
+                </tr>
+                <tr>
+                    <td>May 14, 2024</td>
+                    <td>BTC Deposit</td>
+                    <td>+$500.00</td>
+                    <td><span class="status completed">Completed</span></td>
+                </tr>
+                <tr>
+                    <td>May 12, 2024</td>
+                    <td>Netflix Subscription</td>
+                    <td>-$12.99</td>
+                    <td><span class="status pending">Pending</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="quick-actions-grid">
+        <div class="action-card" onclick="location.href='deposit.html'">
+            <i class="fas fa-wallet"></i>
+            <h3>Deposit Crypto</h3>
+        </div>
+        <div class="action-card" onclick="location.href='products.html'">
+            <i class="fas fa-plus-circle"></i>
+            <h3>New Card</h3>
+        </div>
+        <div class="action-card" onclick="location.href='contact.html'">
+            <i class="fas fa-headset"></i>
+            <h3>Support</h3>
+        </div>
+        <div class="action-card" onclick="location.href='settings.html'">
+            <i class="fas fa-cog"></i>
+            <h3>Settings</h3>
+        </div>
+    </section>
+
+    <!-- Footer (Same as Homepage) -->
+    <footer>
+        <div class="footer-links">
+            <a href="terms.html">Terms</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="aml-kyc.html">Compliance</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <p>&copy; 2024 CardMerchant. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CardMerchant – Settings</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <h1><i class="fas fa-credit-card"></i> CardMerchant</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="settings.html" class="active">Settings</a></li>
+            <li><a href="#" id="logout-btn">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Settings Header -->
+    <section class="settings-header">
+        <h1>Account Settings</h1>
+        <p>Manage your profile, security, and preferences</p>
+    </section>
+
+    <!-- Settings Tabs -->
+    <section class="settings-tabs">
+        <div class="tab-buttons">
+            <button class="tab-btn active" onclick="openTab('profile')">Profile</button>
+            <button class="tab-btn" onclick="openTab('security')">Security</button>
+            <button class="tab-btn" onclick="openTab('preferences')">Preferences</button>
+        </div>
+
+        <!-- Profile Tab -->
+        <div id="profile" class="tab-content active">
+            <form class="settings-form">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" value="Alex Johnson" id="full-name">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" value="alex@example.com" id="email">
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" value="+1 (555) 123-4567" id="phone">
+                </div>
+                <button type="button" class="btn-primary" onclick="updateProfile()">Save Changes</button>
+            </form>
+        </div>
+
+        <!-- Security Tab -->
+        <div id="security" class="tab-content">
+            <form class="settings-form">
+                <div class="form-group">
+                    <label>Current Password</label>
+                    <input type="password" placeholder="Enter current password" id="current-password">
+                </div>
+                <div class="form-group">
+                    <label>New Password</label>
+                    <input type="password" placeholder="Enter new password" id="new-password">
+                </div>
+                <div class="form-group">
+                    <label>Confirm New Password</label>
+                    <input type="password" placeholder="Confirm new password" id="confirm-password">
+                </div>
+                <button type="button" class="btn-primary" onclick="changePassword()">Update Password</button>
+            </form>
+            <div class="security-actions">
+                <button class="btn-outline" onclick="enable2FA()">
+                    <i class="fas fa-shield-alt"></i> Enable 2FA
+                </button>
+            </div>
+        </div>
+
+        <!-- Preferences Tab -->
+        <div id="preferences" class="tab-content">
+            <div class="preference-item">
+                <div class="preference-info">
+                    <h3><i class="fas fa-moon"></i> Dark Mode</h3>
+                    <p>Switch between light and dark theme</p>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="dark-mode-toggle" onchange="toggleDarkMode()">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="preference-item">
+                <div class="preference-info">
+                    <h3><i class="fas fa-bell"></i> Email Notifications</h3>
+                    <p>Receive transaction alerts</p>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="notifications-toggle" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="preference-item danger-zone">
+                <div class="preference-info">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Delete Account</h3>
+                    <p>Permanently remove your CardMerchant account</p>
+                </div>
+                <button class="btn-danger" onclick="confirmDeleteAccount()">
+                    Delete Account
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="terms.html">Terms</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="aml-kyc.html">Compliance</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <p>&copy; 2024 CardMerchant. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

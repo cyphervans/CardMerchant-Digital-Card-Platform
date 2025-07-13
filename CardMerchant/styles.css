@@ -1,0 +1,856 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    color: #2a52be; /* Visa Blue */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.btn-login {
+    background: #2a52be;
+    color: white !important;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5% 10%;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content h1 span {
+    color: #2a52be;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+.btn-primary {
+    background: #2a52be;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.hero-image img {
+    max-width: 500px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* Trust Badges */
+.trust-badges {
+    text-align: center;
+    padding: 2rem 0;
+    background: #fff;
+}
+
+.badges {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.badges img {
+    height: 40px;
+    filter: grayscale(30%);
+    opacity: 0.8;
+}
+
+/* How It Works */
+.how-it-works {
+    padding: 5% 10%;
+    text-align: center;
+}
+
+.how-it-works h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.step {
+    flex: 1;
+    min-width: 250px;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.step i {
+    font-size: 2.5rem;
+    color: #2a52be;
+    margin-bottom: 1rem;
+}
+
+/* CTA */
+.cta {
+    text-align: center;
+    padding: 5% 10%;
+    background: linear-gradient(135deg, #2a52be 0%, #1a3a8f 100%);
+    color: white;
+}
+
+.cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta .btn-primary {
+    background: white;
+    color: #2a52be;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #333;
+    color: white;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-links {
+        display: none; /* Mobile menu needed */
+    }
+}
+
+/* Product Page Styles */
+.product-header {
+    text-align: center;
+    padding: 5% 10% 2%;
+}
+
+.product-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Card Comparison Table */
+.card-comparison {
+    padding: 2% 10%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background: #2a52be;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+/* Card Details Accordion */
+.card-details {
+    padding: 2% 10%;
+}
+
+.card-option {
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    background: #fff;
+    cursor: pointer;
+}
+
+.card-header img {
+    height: 30px;
+    margin-right: 1rem;
+}
+
+.card-header h3 {
+    flex-grow: 1;
+}
+
+.card-content {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background: #f8f9fa;
+}
+
+.card-content.active {
+    max-height: 500px;
+    padding: 1.5rem;
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid #2a52be;
+    color: #2a52be;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 1rem 0;
+}
+
+/* FAQ Section */
+.faq-preview {
+    padding: 2% 10%;
+    text-align: center;
+}
+
+.faq-item {
+    margin: 1rem 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    cursor: pointer;
+}
+
+.faq-answer {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.faq-answer.active {
+    max-height: 200px;
+    padding: 0 1.5rem 1.5rem;
+}
+/* Deposit Page Styles */
+.deposit-header {
+    text-align: center;
+    padding: 5% 10% 2%;
+}
+
+.deposit-steps {
+    display: flex;
+    justify-content: space-around;
+    padding: 2% 10%;
+    margin-bottom: 2rem;
+}
+
+.step {
+    text-align: center;
+    flex: 1;
+    max-width: 200px;
+}
+
+.step-number {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #2a52be;
+    color: white;
+    border-radius: 50%;
+    line-height: 40px;
+    margin-bottom: 1rem;
+}
+
+/* Crypto Tabs */
+.crypto-tabs {
+    padding: 2% 10%;
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.tab-btn {
+    padding: 0.8rem 1.5rem;
+    background: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tab-btn.active {
+    background: #2a52be;
+    color: white;
+}
+
+.crypto-box {
+    display: none;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.crypto-box.active {
+    display: block;
+}
+
+.wallet-info {
+    margin-bottom: 2rem;
+}
+
+.wallet-address {
+    display: flex;
+    gap: 10px;
+    margin: 1rem 0;
+}
+
+.wallet-address input {
+    flex-grow: 1;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: monospace;
+}
+
+.wallet-address button {
+    background: #2a52be;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0 1rem;
+    cursor: pointer;
+}
+
+.qr-code {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.qr-code img {
+    max-width: 200px;
+    border: 1px solid #eee;
+    padding: 10px;
+}
+
+.warning {
+    color: #d9534f;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.deposit-limits {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.deposit-limits ul {
+    margin-top: 0.5rem;
+    padding-left: 1.5rem;
+}
+
+/* Transaction Tracker */
+.transaction-tracker {
+    padding: 2% 10%;
+    text-align: center;
+}
+
+.tracker-steps {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem 0;
+}
+
+.tracker-step {
+    flex: 1;
+    max-width: 200px;
+    opacity: 0.5;
+}
+
+.tracker-step.active {
+    opacity: 1;
+}
+
+.tracker-step i {
+    font-size: 2rem;
+    color: #2a52be;
+    margin-bottom: 0.5rem;
+}
+
+.transaction-details {
+    margin-top: 2rem;
+    color: #666;
+}
+/* Live Transaction Tracking */
+.live-transaction {
+    padding: 2% 10%;
+    text-align: center;
+}
+
+.tx-status {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.tx-info {
+    text-align: left;
+    margin-bottom: 1.5rem;
+    font-family: monospace;
+}
+
+.progress-bar {
+    height: 10px;
+    background: #f0f0f0;
+    border-radius: 5px;
+    margin: 1.5rem 0;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: #2a52be;
+    transition: width 0.5s ease;
+}
+
+.tx-note {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+/* Dashboard Styles */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3% 10% 2%;
+}
+
+.user-greeting h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.user-greeting span {
+    color: #2a52be;
+}
+
+.quick-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Balance Overview */
+.balance-overview {
+    padding: 2% 10%;
+}
+
+.balance-cards {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.balance-card, .total-balance {
+    flex: 1;
+    min-width: 250px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.balance-card {
+    display: flex;
+    justify-content: space-between;
+}
+
+.balance-type {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.balance-type img {
+    height: 30px;
+}
+
+.balance-amount h4 {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.balance-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.btn-icon {
+    background: none;
+    border: none;
+    color: #666;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.total-balance {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.total-balance h3 {
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+/* Recent Transactions */
+.recent-transactions {
+    padding: 2% 10%;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.btn-text {
+    color: #2a52be;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background: #f8f9fa;
+}
+
+.status {
+    padding: 0.3rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.status.completed {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status.pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+/* Quick Actions Grid */
+.quick-actions-grid {
+    padding: 2% 10%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.action-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 2rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.action-card:hover {
+    transform: translateY(-5px);
+}
+
+.action-card i {
+    font-size: 2.5rem;
+    color: #2a52be;
+    margin-bottom: 1rem;
+}
+/* Settings Page Styles */
+.settings-header {
+    padding: 3% 10% 1%;
+}
+
+.settings-tabs {
+    padding: 1% 10% 5%;
+}
+
+.tab-buttons {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 2rem;
+}
+
+.tab-btn {
+    padding: 1rem 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    color: #666;
+    position: relative;
+}
+
+.tab-btn.active {
+    color: #2a52be;
+}
+
+.tab-btn.active::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #2a52be;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Forms */
+.settings-form {
+    max-width: 600px;
+    margin: 2rem 0;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Toggle Switches */
+.preference-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.preference-info h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.5rem;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background: #2a52be;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Danger Zone */
+.danger-zone {
+    color: #d9534f;
+    border-color: #f8d7da !important;
+}
+
+.btn-danger {
+    background: #d9534f;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Dark Mode (Added via JS) */
+body.dark-mode {
+    background: #121212;
+    color: #f0f0f0;
+}
+
+body.dark-mode nav,
+body.dark-mode .balance-card,
+body.dark-mode .action-card,
+body.dark-mode table,
+body.dark-mode th,
+body.dark-mode .tab-content,
+body.dark-mode .preference-item {
+    background: #1e1e1e;
+    color: #f0f0f0;
+    border-color: #333 !important;
+}
+
+body.dark-mode input,
+body.dark-mode .form-group input {
+    background: #2d2d2d;
+    color: #f0f0f0;
+    border-color: #444;
+}
